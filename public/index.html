@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+
+    <title>你的名字 · 个人主页</title>
+    <meta
+      name="description"
+      content="你的名字的个人主页：关于我、项目、经历与联系方式。"
+    />
+
+    <meta property="og:title" content="你的名字 · 个人主页" />
+    <meta
+      property="og:description"
+      content="关于我、项目、经历与联系方式。"
+    />
+    <meta property="og:type" content="website" />
+
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <script defer src="./assets/main.js"></script>
+  </head>
+
+  <body>
+    <a class="skip" href="#content">跳到主要内容</a>
+
+    <header class="top">
+      <div class="container top-inner">
+        <a class="brand" href="/" aria-label="返回首页">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text">你的名字</span>
+        </a>
+
+        <nav class="nav" aria-label="主导航">
+          <a href="#about">关于</a>
+          <a href="#projects">项目</a>
+          <a href="#timeline">经历</a>
+          <a href="#contact">联系</a>
+          <button class="icon-btn" type="button" data-theme-toggle>
+            <span class="icon" aria-hidden="true">☾</span>
+            <span class="sr-only">切换主题</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content" class="container">
+      <section class="hero">
+        <div class="hero-grid">
+          <div>
+            <p class="kicker">你好，我是</p>
+            <h1 class="title">你的名字</h1>
+            <p class="subtitle">
+              你的一句话自我介绍（例如：全栈工程师 / 产品设计 / 数据分析 / 学生）。
+            </p>
+
+            <div class="cta">
+              <a class="btn primary" href="https://github.com/yourname" target="_blank" rel="noreferrer">
+                GitHub
+              </a>
+              <a class="btn" href="#projects">看项目</a>
+              <a class="btn ghost" href="mailto:you@example.com">邮箱联系</a>
+            </div>
+
+            <ul class="meta">
+              <li>
+                <span class="dot" aria-hidden="true"></span>
+                <span>所在地：上海（可改）</span>
+              </li>
+              <li>
+                <span class="dot" aria-hidden="true"></span>
+                <span>关注方向：Web / AI / 开源（可改）</span>
+              </li>
+            </ul>
+          </div>
+
+          <aside class="card hero-card" aria-label="快速信息">
+            <div class="avatar" role="img" aria-label="头像占位"></div>
+            <div class="hero-card-body">
+              <p class="hero-card-title">现在在做</p>
+              <p class="hero-card-text">
+                用一句话写你正在进行的事情（例如：做一个效率工具 / 写博客 / 学习 Rust）。
+              </p>
+              <div class="chips" aria-label="技能标签">
+                <span class="chip">JavaScript</span>
+                <span class="chip">TypeScript</span>
+                <span class="chip">React</span>
+                <span class="chip">Node.js</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="section-head">
+          <h2>关于我</h2>
+          <p>用 3–5 句话说明你擅长什么、在意什么、想做什么。</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>我擅长</h3>
+            <p>
+              例如：产品落地、工程化、性能优化、数据可视化、自动化工作流等。
+            </p>
+          </article>
+          <article class="card">
+            <h3>我在意</h3>
+            <p>例如：体验、可维护性、稳定性、长期主义、清晰沟通。</p>
+          </article>
+          <article class="card">
+            <h3>我想做</h3>
+            <p>例如：构建有影响力的产品、持续开源、写作与分享。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="section-head">
+          <h2>项目精选</h2>
+          <p>放 3–6 个代表作，每个给一句价值描述和链接。</p>
+        </div>
+
+        <div class="project-list" data-projects>
+          <article class="card project">
+            <div class="project-top">
+              <h3>项目 A（可改名）</h3>
+              <span class="pill">Web</span>
+            </div>
+            <p>一句话说明解决了什么问题，给出关键指标或用户价值。</p>
+            <div class="links">
+              <a href="https://github.com/yourname/project-a" target="_blank" rel="noreferrer"
+                >代码</a
+              >
+              <a href="https://example.com" target="_blank" rel="noreferrer">演示</a>
+            </div>
+          </article>
+
+          <article class="card project">
+            <div class="project-top">
+              <h3>项目 B（可改名）</h3>
+              <span class="pill">Open Source</span>
+            </div>
+            <p>一句话说明你做了什么：例如自动化脚本、工具库、组件库等。</p>
+            <div class="links">
+              <a href="https://github.com/yourname/project-b" target="_blank" rel="noreferrer"
+                >代码</a
+              >
+              <a href="https://example.com" target="_blank" rel="noreferrer">介绍</a>
+            </div>
+          </article>
+
+          <article class="card project">
+            <div class="project-top">
+              <h3>项目 C（可改名）</h3>
+              <span class="pill">AI</span>
+            </div>
+            <p>一句话说明你如何用数据/模型/提示工程实现目标与收益。</p>
+            <div class="links">
+              <a href="https://github.com/yourname/project-c" target="_blank" rel="noreferrer"
+                >代码</a
+              >
+              <a href="https://example.com" target="_blank" rel="noreferrer">文章</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="timeline" class="section">
+        <div class="section-head">
+          <h2>经历</h2>
+          <p>按时间倒序，突出成果与影响。</p>
+        </div>
+
+        <ol class="timeline">
+          <li class="card timeline-item">
+            <div class="timeline-head">
+              <h3>公司 / 学校 · 职位</h3>
+              <span class="muted">2025.06 – 至今</span>
+            </div>
+            <p>一句话总结职责与成果（尽量量化）。</p>
+          </li>
+          <li class="card timeline-item">
+            <div class="timeline-head">
+              <h3>公司 / 学校 · 职位</h3>
+              <span class="muted">2023.09 – 2025.06</span>
+            </div>
+            <p>一句话总结职责与成果（尽量量化）。</p>
+          </li>
+        </ol>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="section-head">
+          <h2>联系我</h2>
+          <p>你可以把链接替换成你的真实账号。</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>常用渠道</h3>
+            <ul class="contact">
+              <li>
+                <span class="muted">Email</span>
+                <a href="mailto:you@example.com">you@example.com</a>
+              </li>
+              <li>
+                <span class="muted">GitHub</span>
+                <a href="https://github.com/yourname" target="_blank" rel="noreferrer"
+                  >github.com/yourname</a
+                >
+              </li>
+              <li>
+                <span class="muted">X / Twitter</span>
+                <a href="https://x.com/yourname" target="_blank" rel="noreferrer"
+                  >x.com/yourname</a
+                >
+              </li>
+              <li>
+                <span class="muted">LinkedIn</span>
+                <a
+                  href="https://www.linkedin.com/in/yourname"
+                  target="_blank"
+                  rel="noreferrer"
+                  >linkedin.com/in/yourname</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>简历 / 作品集</h3>
+            <p>
+              你可以把 PDF 简历放到仓库里（例如 <code>resume.pdf</code>），然后在这里链接。
+            </p>
+            <div class="cta">
+              <a class="btn" href="#" aria-disabled="true">下载简历（占位）</a>
+              <a class="btn ghost" href="#projects">回到项目</a>
+            </div>
+            <p class="fine muted">
+              提示：GitHub Pages 默认 https，适合托管静态资源与作品展示。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>
+          © <span data-year></span> 你的名字 · Built with GitHub Pages
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
