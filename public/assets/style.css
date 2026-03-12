@@ -171,6 +171,13 @@ html[data-theme="light"] .top {
   border: 0;
 }
 
+.lang {
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.2px;
+  color: var(--muted);
+}
+
 .hero {
   padding: 44px 0 10px;
 }
@@ -482,4 +489,3 @@ code {
     display: none;
   }
 }
-

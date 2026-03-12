@@ -1,20 +1,18 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
 
-    <title>你的名字 · 个人主页</title>
-    <meta
-      name="description"
-      content="你的名字的个人主页：关于我、项目、经历与联系方式。"
-    />
+    <title data-i18n="meta.title">你的名字 · 个人主页</title>
+    <meta name="description" data-i18n-content="meta.description" content="" />
 
-    <meta property="og:title" content="你的名字 · 个人主页" />
+    <meta property="og:title" data-i18n-content="meta.ogTitle" content="" />
     <meta
       property="og:description"
-      content="关于我、项目、经历与联系方式。"
+      data-i18n-content="meta.ogDescription"
+      content=""
     />
     <meta property="og:type" content="website" />
 
@@ -24,7 +22,7 @@
   </head>
 
   <body>
-    <a class="skip" href="#content">跳到主要内容</a>
+    <a class="skip" href="#content" data-i18n="a11y.skip">跳到主要内容</a>
 
     <header class="top">
       <div class="container top-inner">
@@ -34,13 +32,20 @@
         </a>
 
         <nav class="nav" aria-label="主导航">
-          <a href="#about">关于</a>
-          <a href="#projects">项目</a>
-          <a href="#timeline">经历</a>
-          <a href="#contact">联系</a>
+          <a href="#bio" data-i18n="nav.bio">简介</a>
+          <a href="#research" data-i18n="nav.research">研究方向</a>
+          <a href="#education" data-i18n="nav.education">教育背景</a>
+          <a href="#projects" data-i18n="nav.projects">主持项目</a>
+          <a href="#publications" data-i18n="nav.publications">发表论文</a>
+          <a href="#contact" data-i18n="nav.contact">联系</a>
+
+          <button class="icon-btn" type="button" data-lang-toggle>
+            <span class="lang" aria-hidden="true">EN</span>
+            <span class="sr-only" data-i18n="a11y.toggleLang">切换语言</span>
+          </button>
           <button class="icon-btn" type="button" data-theme-toggle>
             <span class="icon" aria-hidden="true">☾</span>
-            <span class="sr-only">切换主题</span>
+            <span class="sr-only" data-i18n="a11y.toggleTheme">切换主题</span>
           </button>
         </nav>
       </div>
@@ -50,28 +55,26 @@
       <section class="hero">
         <div class="hero-grid">
           <div>
-            <p class="kicker">你好，我是</p>
+            <p class="kicker" data-i18n="hero.kicker">你好，我是</p>
             <h1 class="title">你的名字</h1>
-            <p class="subtitle">
-              你的一句话自我介绍（例如：全栈工程师 / 产品设计 / 数据分析 / 学生）。
-            </p>
+            <p class="subtitle" data-i18n="hero.subtitle"></p>
 
             <div class="cta">
               <a class="btn primary" href="https://github.com/yourname" target="_blank" rel="noreferrer">
-                GitHub
+                <span data-i18n="hero.github">GitHub</span>
               </a>
-              <a class="btn" href="#projects">看项目</a>
-              <a class="btn ghost" href="mailto:you@example.com">邮箱联系</a>
+              <a class="btn" href="#projects" data-i18n="hero.viewProjects">看项目</a>
+              <a class="btn ghost" href="mailto:you@example.com" data-i18n="hero.email">邮箱联系</a>
             </div>
 
             <ul class="meta">
               <li>
                 <span class="dot" aria-hidden="true"></span>
-                <span>所在地：上海（可改）</span>
+                <span data-i18n="hero.location">所在地：上海（可改）</span>
               </li>
               <li>
                 <span class="dot" aria-hidden="true"></span>
-                <span>关注方向：Web / AI / 开源（可改）</span>
+                <span data-i18n="hero.focus">关注方向：Web / AI / 开源（可改）</span>
               </li>
             </ul>
           </div>
@@ -79,10 +82,8 @@
           <aside class="card hero-card" aria-label="快速信息">
             <div class="avatar" role="img" aria-label="头像占位"></div>
             <div class="hero-card-body">
-              <p class="hero-card-title">现在在做</p>
-              <p class="hero-card-text">
-                用一句话写你正在进行的事情（例如：做一个效率工具 / 写博客 / 学习 Rust）。
-              </p>
+              <p class="hero-card-title" data-i18n="hero.nowTitle">现在在做</p>
+              <p class="hero-card-text" data-i18n="hero.nowText"></p>
               <div class="chips" aria-label="技能标签">
                 <span class="chip">JavaScript</span>
                 <span class="chip">TypeScript</span>
@@ -94,114 +95,153 @@
         </div>
       </section>
 
-      <section id="about" class="section">
+      <section id="bio" class="section">
         <div class="section-head">
-          <h2>关于我</h2>
-          <p>用 3–5 句话说明你擅长什么、在意什么、想做什么。</p>
+          <h2 data-i18n="bio.title">个人简介</h2>
+          <p data-i18n="bio.lead"></p>
+        </div>
+
+        <article class="card">
+          <p data-i18n="bio.body"></p>
+        </article>
+      </section>
+
+      <section id="research" class="section">
+        <div class="section-head">
+          <h2 data-i18n="research.title">研究方向</h2>
+          <p data-i18n="research.lead"></p>
         </div>
 
         <div class="grid-3">
           <article class="card">
-            <h3>我擅长</h3>
-            <p>
-              例如：产品落地、工程化、性能优化、数据可视化、自动化工作流等。
-            </p>
+            <h3 data-i18n="research.r1.title">方向一</h3>
+            <p class="muted" data-i18n="research.r1.body"></p>
           </article>
           <article class="card">
-            <h3>我在意</h3>
-            <p>例如：体验、可维护性、稳定性、长期主义、清晰沟通。</p>
+            <h3 data-i18n="research.r2.title">方向二</h3>
+            <p class="muted" data-i18n="research.r2.body"></p>
           </article>
           <article class="card">
-            <h3>我想做</h3>
-            <p>例如：构建有影响力的产品、持续开源、写作与分享。</p>
+            <h3 data-i18n="research.r3.title">方向三</h3>
+            <p class="muted" data-i18n="research.r3.body"></p>
           </article>
         </div>
       </section>
 
-      <section id="projects" class="section">
+      <section id="education" class="section">
         <div class="section-head">
-          <h2>项目精选</h2>
-          <p>放 3–6 个代表作，每个给一句价值描述和链接。</p>
-        </div>
-
-        <div class="project-list" data-projects>
-          <article class="card project">
-            <div class="project-top">
-              <h3>项目 A（可改名）</h3>
-              <span class="pill">Web</span>
-            </div>
-            <p>一句话说明解决了什么问题，给出关键指标或用户价值。</p>
-            <div class="links">
-              <a href="https://github.com/yourname/project-a" target="_blank" rel="noreferrer"
-                >代码</a
-              >
-              <a href="https://example.com" target="_blank" rel="noreferrer">演示</a>
-            </div>
-          </article>
-
-          <article class="card project">
-            <div class="project-top">
-              <h3>项目 B（可改名）</h3>
-              <span class="pill">Open Source</span>
-            </div>
-            <p>一句话说明你做了什么：例如自动化脚本、工具库、组件库等。</p>
-            <div class="links">
-              <a href="https://github.com/yourname/project-b" target="_blank" rel="noreferrer"
-                >代码</a
-              >
-              <a href="https://example.com" target="_blank" rel="noreferrer">介绍</a>
-            </div>
-          </article>
-
-          <article class="card project">
-            <div class="project-top">
-              <h3>项目 C（可改名）</h3>
-              <span class="pill">AI</span>
-            </div>
-            <p>一句话说明你如何用数据/模型/提示工程实现目标与收益。</p>
-            <div class="links">
-              <a href="https://github.com/yourname/project-c" target="_blank" rel="noreferrer"
-                >代码</a
-              >
-              <a href="https://example.com" target="_blank" rel="noreferrer">文章</a>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="timeline" class="section">
-        <div class="section-head">
-          <h2>经历</h2>
-          <p>按时间倒序，突出成果与影响。</p>
+          <h2 data-i18n="edu.title">教育背景</h2>
+          <p data-i18n="edu.lead"></p>
         </div>
 
         <ol class="timeline">
           <li class="card timeline-item">
             <div class="timeline-head">
-              <h3>公司 / 学校 · 职位</h3>
+              <h3 data-i18n="edu.e1.title">学校 · 学位</h3>
               <span class="muted">2025.06 – 至今</span>
             </div>
-            <p>一句话总结职责与成果（尽量量化）。</p>
+            <p data-i18n="edu.e1.body"></p>
           </li>
           <li class="card timeline-item">
             <div class="timeline-head">
-              <h3>公司 / 学校 · 职位</h3>
+              <h3 data-i18n="edu.e2.title">学校 · 学位</h3>
               <span class="muted">2023.09 – 2025.06</span>
             </div>
-            <p>一句话总结职责与成果（尽量量化）。</p>
+            <p data-i18n="edu.e2.body"></p>
+          </li>
+        </ol>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="section-head">
+          <h2 data-i18n="projects.title">主持项目</h2>
+          <p data-i18n="projects.lead"></p>
+        </div>
+
+        <div class="project-list">
+          <article class="card project">
+            <div class="project-top">
+              <h3 data-i18n="projects.p1.title">项目名称 A</h3>
+              <span class="pill" data-i18n="projects.p1.tag">基金/校级/企业合作</span>
+            </div>
+            <p data-i18n="projects.p1.body"></p>
+            <div class="links">
+              <a href="https://example.com" target="_blank" rel="noreferrer" data-i18n="projects.link.more"
+                >详情</a
+              >
+            </div>
+          </article>
+
+          <article class="card project">
+            <div class="project-top">
+              <h3 data-i18n="projects.p2.title">项目名称 B</h3>
+              <span class="pill" data-i18n="projects.p2.tag">国家/省部级</span>
+            </div>
+            <p data-i18n="projects.p2.body"></p>
+            <div class="links">
+              <a href="https://example.com" target="_blank" rel="noreferrer" data-i18n="projects.link.more"
+                >详情</a
+              >
+            </div>
+          </article>
+
+          <article class="card project">
+            <div class="project-top">
+              <h3 data-i18n="projects.p3.title">项目名称 C</h3>
+              <span class="pill" data-i18n="projects.p3.tag">企业合作</span>
+            </div>
+            <p data-i18n="projects.p3.body"></p>
+            <div class="links">
+              <a href="https://example.com" target="_blank" rel="noreferrer" data-i18n="projects.link.more"
+                >详情</a
+              >
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="publications" class="section">
+        <div class="section-head">
+          <h2 data-i18n="pubs.title">发表论文</h2>
+          <p data-i18n="pubs.lead"></p>
+        </div>
+
+        <ol class="timeline">
+          <li class="card timeline-item">
+            <div class="timeline-head">
+              <h3 data-i18n="pubs.a1.title">论文标题 A</h3>
+              <span class="muted">2025</span>
+            </div>
+            <p class="muted" data-i18n="pubs.a1.body"></p>
+            <div class="links">
+              <a href="https://example.com" target="_blank" rel="noreferrer">PDF</a>
+              <a href="https://doi.org/" target="_blank" rel="noreferrer">DOI</a>
+            </div>
+          </li>
+
+          <li class="card timeline-item">
+            <div class="timeline-head">
+              <h3 data-i18n="pubs.a2.title">论文标题 B</h3>
+              <span class="muted">2024</span>
+            </div>
+            <p class="muted" data-i18n="pubs.a2.body"></p>
+            <div class="links">
+              <a href="https://example.com" target="_blank" rel="noreferrer">PDF</a>
+              <a href="https://doi.org/" target="_blank" rel="noreferrer">DOI</a>
+            </div>
           </li>
         </ol>
       </section>
 
       <section id="contact" class="section">
         <div class="section-head">
-          <h2>联系我</h2>
-          <p>你可以把链接替换成你的真实账号。</p>
+          <h2 data-i18n="contact.title">联系我</h2>
+          <p data-i18n="contact.lead"></p>
         </div>
 
         <div class="grid-2">
           <div class="card">
-            <h3>常用渠道</h3>
+            <h3 data-i18n="contact.channels">常用渠道</h3>
             <ul class="contact">
               <li>
                 <span class="muted">Email</span>
@@ -232,24 +272,22 @@
           </div>
 
           <div class="card">
-            <h3>简历 / 作品集</h3>
-            <p>
-              你可以把 PDF 简历放到仓库里（例如 <code>resume.pdf</code>），然后在这里链接。
-            </p>
+            <h3 data-i18n="contact.cvTitle">简历 / 作品集</h3>
+            <p data-i18n="contact.cvBody"></p>
             <div class="cta">
-              <a class="btn" href="#" aria-disabled="true">下载简历（占位）</a>
-              <a class="btn ghost" href="#projects">回到项目</a>
+              <a class="btn" href="#" aria-disabled="true" data-i18n="contact.cvDownload"
+                >下载简历（占位）</a
+              >
+              <a class="btn ghost" href="#projects" data-i18n="contact.backProjects">回到项目</a>
             </div>
-            <p class="fine muted">
-              提示：GitHub Pages 默认 https，适合托管静态资源与作品展示。
-            </p>
+            <p class="fine muted" data-i18n="contact.tip"></p>
           </div>
         </div>
       </section>
 
       <footer class="footer">
         <p>
-          © <span data-year></span> 你的名字 · Built with GitHub Pages
+          © <span data-year></span> <span data-i18n="footer.text"></span>
         </p>
       </footer>
     </main>
