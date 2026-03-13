@@ -1,14 +1,14 @@
 :root {
   --bg: #0b1220;
-  --panel: rgba(255, 255, 255, 0.06);
-  --panel-strong: rgba(255, 255, 255, 0.1);
+  --panel: rgba(255, 255, 255, 0.055);
+  --panel-strong: rgba(255, 255, 255, 0.09);
   --text: rgba(255, 255, 255, 0.9);
-  --muted: rgba(255, 255, 255, 0.7);
-  --faint: rgba(255, 255, 255, 0.55);
+  --muted: rgba(255, 255, 255, 0.72);
+  --faint: rgba(255, 255, 255, 0.58);
   --border: rgba(255, 255, 255, 0.12);
-  --brand: #7c3aed;
-  --brand-2: #22c55e;
-  --shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  --brand: #2563eb;
+  --brand-2: #0ea5e9;
+  --shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
 
   --radius: 18px;
   --radius-sm: 12px;
@@ -17,17 +17,20 @@
   --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Microsoft YaHei",
     "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman",
+    "Noto Serif CJK SC", "Songti SC", STSong, serif;
 }
 
 html[data-theme="light"] {
   --bg: #f6f7fb;
-  --panel: rgba(10, 18, 32, 0.05);
-  --panel-strong: rgba(10, 18, 32, 0.08);
+  --panel: rgba(10, 18, 32, 0.03);
+  --panel-strong: rgba(10, 18, 32, 0.055);
   --text: rgba(10, 18, 32, 0.9);
   --muted: rgba(10, 18, 32, 0.7);
   --faint: rgba(10, 18, 32, 0.55);
   --border: rgba(10, 18, 32, 0.12);
-  --shadow: 0 18px 40px rgba(10, 18, 32, 0.08);
+  --shadow: 0 10px 28px rgba(10, 18, 32, 0.06);
 }
 
 * {
@@ -43,11 +46,7 @@ body {
   margin: 0;
   font-family: var(--font);
   color: var(--text);
-  background:
-    radial-gradient(1200px 600px at 10% 0%, rgba(124, 58, 237, 0.22), transparent),
-    radial-gradient(1000px 600px at 90% 10%, rgba(34, 197, 94, 0.18), transparent),
-    radial-gradient(900px 500px at 50% 100%, rgba(56, 189, 248, 0.16), transparent),
-    var(--bg);
+  background: var(--bg);
   line-height: 1.6;
 }
 
@@ -84,20 +83,14 @@ a:hover {
   top: 0;
   z-index: 10;
   backdrop-filter: blur(14px);
-  background: linear-gradient(
-    to bottom,
-    rgba(5, 10, 18, 0.65),
-    rgba(5, 10, 18, 0.25)
-  );
+  background: rgba(5, 10, 18, 0.55);
+  background: color-mix(in srgb, var(--bg) 72%, transparent);
   border-bottom: 1px solid var(--border);
 }
 
 html[data-theme="light"] .top {
-  background: linear-gradient(
-    to bottom,
-    rgba(246, 247, 251, 0.9),
-    rgba(246, 247, 251, 0.6)
-  );
+  background: rgba(246, 247, 251, 0.85);
+  background: color-mix(in srgb, var(--bg) 84%, transparent);
 }
 
 .top-inner {
@@ -121,7 +114,7 @@ html[data-theme="light"] .top {
   height: 28px;
   border-radius: 10px;
   background: linear-gradient(135deg, var(--brand), #38bdf8);
-  box-shadow: 0 10px 26px rgba(124, 58, 237, 0.35);
+  box-shadow: 0 10px 26px rgba(37, 99, 235, 0.25);
 }
 
 .nav {
@@ -200,6 +193,7 @@ html[data-theme="light"] .top {
   font-size: clamp(38px, 4vw, 56px);
   line-height: 1.08;
   letter-spacing: -0.8px;
+  font-family: var(--font-serif);
 }
 
 .subtitle {
@@ -333,6 +327,8 @@ html[data-theme="light"] .top {
 .section-head h1 {
   margin: 0;
   font-size: 22px;
+  font-family: var(--font-serif);
+  letter-spacing: -0.2px;
 }
 
 .section-head p {
@@ -410,6 +406,43 @@ html[data-theme="light"] .links a {
   margin: 0;
   display: grid;
   gap: 14px;
+}
+
+.pub-year {
+  margin: 8px 0 12px;
+  color: var(--faint);
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+
+.pubs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.pub-item {
+  padding: 16px 18px;
+}
+
+.pub-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.pub-idx {
+  color: var(--faint);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.pub-title {
+  margin: 0;
+  font-size: 16px;
+  font-family: var(--font-serif);
 }
 
 .timeline-item {

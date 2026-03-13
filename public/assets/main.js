@@ -3,11 +3,14 @@ const LANG_KEY = "lang";
 
 const I18N = {
   zh: {
+    name: "杨定裕",
     meta: {
-      title: "你的名字 · 个人主页",
-      description: "个人主页：个人简介、研究方向、教育背景、主持项目、发表论文与联系方式。",
-      ogTitle: "你的名字 · 个人主页",
-      ogDescription: "个人简介、研究方向、教育背景、主持项目、发表论文与联系方式。",
+      title: "杨定裕 · 个人主页",
+      description:
+        "浙江大学区块链与数据安全全国重点实验室研究员：研究方向、主持项目、发表论文与联系方式。",
+      ogTitle: "杨定裕 · 个人主页",
+      ogDescription:
+        "浙江大学区块链与数据安全全国重点实验室研究员：研究方向、主持项目、发表论文与联系方式。",
     },
     a11y: {
       skip: "跳到主要内容",
@@ -17,93 +20,125 @@ const I18N = {
     nav: {
       bio: "个人简介",
       research: "研究方向",
-      education: "教育背景",
       projects: "主持项目",
       publications: "发表论文",
       contact: "联系",
     },
     hero: {
       kicker: "你好，我是",
-      subtitle: "一句话自我介绍（例如：研究员 / 博士生 / 工程师 / 教师）。",
-      github: "GitHub",
+      subtitle:
+        "浙江大学区块链与数据安全全国重点实验室 研究员 · CCF 数据库&协同计算专委 执行委员",
       viewProjects: "看项目",
+      viewPublications: "看论文",
       email: "邮箱联系",
-      location: "所在地：上海（可改）",
-      focus: "研究方向：方向 A / 方向 B / 方向 C（可改）",
+      affiliation: "单位：浙江大学区块链与数据安全全国重点实验室",
+      focus: "研究方向：大数据处理 · 大模型向量检索 · 软硬结合优化 · 资源调度",
       nowTitle: "现在在做",
-      nowText: "用一句话写你最近的研究或工作重点（可改）。",
+      nowText:
+        "多模态数据库优化、多智能体协同与资源调度优化、大模型推理优化。",
     },
     bio: {
       title: "个人简介",
-      lead: "用 3–5 句话概括你的背景、兴趣与代表性成果。",
-      body: "这里写你的个人简介：你是谁、研究/工作聚焦点、你擅长的方法或系统、以及你希望解决的问题（可改）。",
+      lead: "研究员 · 数据库与数据智能系统",
+      p1:
+        "杨定裕，浙江大学区块链与数据安全全国重点实验室研究员，CCF 数据库&协同计算专委执行委员，2015 年博士毕业于上海交通大学。研究方向包括大数据处理、大模型向量检索、软硬结合性能优化与资源调度等。",
+      p2:
+        "曾就职于阿里巴巴集团 6 年，负责集群软硬件性能优化、大规模数据中心资源调度等工作，获得阿里巴巴双十一勇于冲锋奖、卓越个人奖、丹甲金戎奖。",
+      p3:
+        "在 CCF 推荐会议和期刊上发表论文 60 余篇，包含 ASPLOS、PVLDB、SIGMOD、WWW、ASE、VLDB Journal、ICPP、TPDS 等；主持国家自然科学青年基金、CCF-华为胡杨林基金数据库专项、CCF-蚂蚁软硬协同基金等攻关项目。",
     },
     research: {
       title: "研究方向",
-      lead: "列出你的主要研究主题与关键词。",
-      r1: { title: "方向一（可改）", body: "用一句话描述方向与关键词（可改）。" },
-      r2: { title: "方向二（可改）", body: "用一句话描述方向与关键词（可改）。" },
-      r3: { title: "方向三（可改）", body: "用一句话描述方向与关键词（可改）。" },
-    },
-    edu: {
-      title: "教育背景",
-      lead: "按时间倒序展示学位、学校与研究/课程重点。",
-      e1: { title: "学校 · 学位（可改）", body: "导师/方向/奖学金/代表课程（可改）。" },
-      e2: { title: "学校 · 学位（可改）", body: "导师/方向/奖学金/代表课程（可改）。" },
+      lead: "系统方向（数据库/系统/AI Infra）与软硬协同优化。",
+      r1: {
+        title: "大数据处理与数据库系统",
+        body: "面向规模化数据处理的执行引擎、存储与查询优化，关注性能与可维护性。",
+      },
+      r2: {
+        title: "大模型向量检索与 AI-Native 系统",
+        body: "向量检索、模型管理与推理系统，探索任务驱动的 AI-Native DBMS 设计。",
+      },
+      r3: {
+        title: "软硬结合优化与资源调度",
+        body: "集群/数据中心资源调度、GPU 集群调度与性能优化，结合软硬协同提升效率。",
+      },
     },
     projects: {
       title: "主持项目",
-      lead: "突出你作为负责人/核心成员的项目：资金来源、职责与产出。",
-      link: { more: "详情" },
+      lead: "部分攻关项目（可按需补充项目周期、角色与产出）。",
       p1: {
-        title: "项目名称 A（可改）",
-        tag: "基金/校级/企业合作（可改）",
-        body: "职责：项目负责人。产出：原型/论文/系统/开源等（可改）。",
+        title: "国家自然科学青年基金",
+        tag: "NSFC",
+        body: "青年基金项目（可补充项目名称、周期与研究内容）。",
       },
       p2: {
-        title: "项目名称 B（可改）",
-        tag: "国家/省部级（可改）",
-        body: "职责：项目负责人。产出：数据集/平台/标准/专利等（可改）。",
+        title: "CCF-华为胡杨林基金数据库专项",
+        tag: "CCF × Huawei",
+        body: "数据库专项攻关项目（可补充项目名称、周期与产出）。",
       },
       p3: {
-        title: "项目名称 C（可改）",
-        tag: "企业合作（可改）",
-        body: "职责：项目负责人。产出：落地应用与效果指标（可改）。",
+        title: "CCF-蚂蚁软硬协同基金",
+        tag: "CCF × Ant",
+        body: "软硬协同方向攻关项目（可补充项目名称、周期与产出）。",
+      },
+      p4: {
+        title: "阿里巴巴 AIR 项目",
+        tag: "Alibaba",
+        body: "企业科研项目（可补充研究主题、职责与效果指标）。",
       },
     },
     pubs: {
       title: "发表论文",
-      lead: "按时间倒序列出论文/专著/会议与链接（PDF/DOI）。",
-      a1: {
-        title: "论文标题 A（可改）",
-        body: "作者列表 · 会议/期刊 · 关键词（可改）。",
-      },
-      a2: {
-        title: "论文标题 B（可改）",
-        body: "作者列表 · 会议/期刊 · 关键词（可改）。",
+      lead:
+        "近年代表论文（* 表示通讯作者；如需可补充 PDF/DOI/ArXiv 链接）。",
+      y2026: {
+        p1: {
+          title:
+            "MorphingDB: A Task-Centric AI-Native DBMS for Model Management and Inference",
+          body:
+            "Sai Wu, Ruichen Xia, Dingyu Yang (*), Rui Wang, Huihang Lai, Jiarui Guan, Jiameng Bai, Dongxiang Zhang, Xiu Tang, Zhongle Xie, Peng Lu, Gang Chen. SIGMOD 2026. [CCF A]",
+        },
+        p2: {
+          title: "Query-Aware Path Inference from Spatial Videos",
+          body:
+            "Taihang Dong, Dingyu Yang, Ping Chen, Dongxiang Zhang. SIGMOD 2026. [CCF A]",
+        },
+        p3: {
+          title:
+            "GFS: A Preemption-aware Scheduling Framework for GPU Clusters with Predictive Spot Instance Management",
+          body:
+            "Jiaang Duan, Shenglin Xu, Shiyou Qian, Dingyu Yang (*), Kangjin Wang, Liping Zhang, Gang Chen. ASPLOS 2026. [CCF A]",
+        },
+        p4: {
+          title: "Efficient and Accurate Cross-Camera Vehicle Trajectory Recovery",
+          body:
+            "Taihang Dong, Dingyu Yang (*), Dongping Zhang, Sai Wu, Shaojie Qiao, Dongxiang Zhang. IEEE TKDE. 2026. Accepted. [CCF A]",
+        },
       },
     },
     contact: {
       title: "联系我",
-      lead: "把链接替换成你的真实账号与邮箱。",
+      lead: "欢迎学术交流、项目合作与学生加入。",
       channels: "常用渠道",
-      cvTitle: "简历 / 作品集",
-      cvBody: "你可以把 PDF 简历放到仓库里（例如 public/resume.pdf），然后在这里链接（可改）。",
-      cvDownload: "下载简历（占位）",
-      backProjects: "回到项目",
-      tip: "提示：GitHub Pages 适合托管静态个人主页与作品展示。",
+      joinTitle: "团队招收",
+      joinBody:
+        "团队招收：多模态数据库优化、多智能体协同与资源调度优化、大模型推理优化等方向，欢迎联系 (yangdingyu@zju.edu.cn)，加入数据库与数据智能团队。",
+      joinCta: "邮件联系",
+      joinMore: "看研究方向",
     },
     footer: {
-      text: "你的名字 · Built with GitHub Pages",
+      text: "杨定裕 · Built with GitHub Pages",
     },
   },
   en: {
+    name: "Dingyu Yang",
     meta: {
-      title: "Your Name · Homepage",
+      title: "Dingyu Yang · Homepage",
       description:
-        "Personal homepage: bio, research interests, education, projects, publications, and contact.",
-      ogTitle: "Your Name · Homepage",
-      ogDescription: "Bio, research interests, education, projects, publications, and contact.",
+        "Researcher at Zhejiang University: research interests, projects, publications, and contact.",
+      ogTitle: "Dingyu Yang · Homepage",
+      ogDescription:
+        "Research interests, projects, publications, and contact.",
     },
     a11y: {
       skip: "Skip to content",
@@ -113,7 +148,6 @@ const I18N = {
     nav: {
       bio: "Bio",
       research: "Research",
-      education: "Education",
       projects: "Projects",
       publications: "Publications",
       contact: "Contact",
@@ -121,71 +155,112 @@ const I18N = {
     hero: {
       kicker: "Hi, I'm",
       subtitle:
-        "One-line intro (e.g., Researcher / PhD Candidate / Engineer / Faculty).",
-      github: "GitHub",
+        "Researcher, State Key Laboratory of Blockchain and Data Security, Zhejiang University · Executive Committee Member, CCF TC on Databases & Cooperative Computing",
       viewProjects: "Projects",
+      viewPublications: "Publications",
       email: "Email",
-      location: "Location: Shanghai (edit me)",
-      focus: "Interests: Topic A / Topic B / Topic C (edit me)",
+      affiliation:
+        "Affiliation: State Key Laboratory of Blockchain and Data Security, Zhejiang University",
+      focus:
+        "Interests: big data processing · vector retrieval for LLMs · SW/HW co-optimization · resource scheduling",
       nowTitle: "Now",
-      nowText: "Describe what you are currently working on (edit me).",
+      nowText:
+        "Multimodal database optimization, multi-agent coordination & scheduling, and LLM inference optimization.",
     },
     bio: {
       title: "Bio",
-      lead: "Summarize your background, interests, and key outcomes in 3–5 sentences.",
-      body: "Write your bio here: who you are, what you work on, and what problems you care about (edit me).",
+      lead: "Researcher · Database & Data Intelligence Systems",
+      p1:
+        "Dingyu Yang is a Researcher at the State Key Laboratory of Blockchain and Data Security, Zhejiang University, and an Executive Committee Member of the CCF TC on Databases & Cooperative Computing. He received his Ph.D. from Shanghai Jiao Tong University in 2015.",
+      p2:
+        "He previously worked at Alibaba Group for six years, focusing on system performance optimization and large-scale datacenter resource scheduling, and received multiple internal awards including the Double 11 “Charge Ahead” Award, Outstanding Individual Award, and Danjia Jinyong Award.",
+      p3:
+        "He has published 60+ papers in CCF-recommended venues and journals (e.g., ASPLOS, PVLDB, SIGMOD, WWW, ASE, VLDB Journal, ICPP, TPDS) and led multiple research projects including the NSFC Young Scientists Fund, the CCF-Huawei “Populus euphratica” Database Fund, and the CCF-Ant SW/HW Co-optimization Fund.",
     },
     research: {
       title: "Research Interests",
-      lead: "List your main research topics and keywords.",
-      r1: { title: "Area 1 (edit me)", body: "One-line description + keywords (edit me)." },
-      r2: { title: "Area 2 (edit me)", body: "One-line description + keywords (edit me)." },
-      r3: { title: "Area 3 (edit me)", body: "One-line description + keywords (edit me)." },
-    },
-    edu: {
-      title: "Education",
-      lead: "Reverse chronological order: degree, institution, and focus.",
-      e1: { title: "Institution · Degree (edit me)", body: "Advisor / focus / awards / coursework (edit me)." },
-      e2: { title: "Institution · Degree (edit me)", body: "Advisor / focus / awards / coursework (edit me)." },
+      lead: "Systems (databases / systems / AI infra) and SW/HW co-optimization.",
+      r1: {
+        title: "Big Data Processing & Database Systems",
+        body:
+          "Execution engines, storage, and query optimization for large-scale data processing, with a focus on performance and maintainability.",
+      },
+      r2: {
+        title: "Vector Retrieval & AI-Native Systems",
+        body:
+          "Vector search, model management, and inference systems; task-centric AI-native DBMS design.",
+      },
+      r3: {
+        title: "Resource Scheduling & SW/HW Co-optimization",
+        body:
+          "Cluster/datacenter scheduling, GPU cluster scheduling, and performance optimization via software-hardware collaboration.",
+      },
     },
     projects: {
       title: "Led Projects",
-      lead: "Highlight projects you led: funding, role, and outcomes.",
-      link: { more: "Details" },
+      lead: "Selected projects (add time span, role, and outputs as needed).",
       p1: {
-        title: "Project A (edit me)",
-        tag: "Grant / University / Industry (edit me)",
-        body: "Role: PI/Lead. Outcomes: prototype / paper / system / open source (edit me).",
+        title: "NSFC Young Scientists Fund",
+        tag: "NSFC",
+        body: "Young Scientists Fund project (add title, duration, and scope).",
       },
       p2: {
-        title: "Project B (edit me)",
-        tag: "National / Provincial (edit me)",
-        body: "Role: PI/Lead. Outcomes: dataset / platform / standard / patent (edit me).",
+        title: "CCF–Huawei “Populus euphratica” Database Fund",
+        tag: "CCF × Huawei",
+        body: "Database-focused research project (add title, duration, and outputs).",
       },
       p3: {
-        title: "Project C (edit me)",
-        tag: "Industry (edit me)",
-        body: "Role: PI/Lead. Outcomes: deployed product + metrics (edit me).",
+        title: "CCF–Ant SW/HW Co-optimization Fund",
+        tag: "CCF × Ant",
+        body: "SW/HW co-optimization research project (add title, duration, and outputs).",
+      },
+      p4: {
+        title: "Alibaba AIR Project",
+        tag: "Alibaba",
+        body: "Industry research project (add topic, role, and impact metrics).",
       },
     },
     pubs: {
       title: "Publications",
-      lead: "Reverse chronological order with links (PDF/DOI).",
-      a1: { title: "Paper Title A (edit me)", body: "Authors · Venue · Keywords (edit me)." },
-      a2: { title: "Paper Title B (edit me)", body: "Authors · Venue · Keywords (edit me)." },
+      lead:
+        "Selected recent publications (* indicates corresponding author; add PDF/DOI/ArXiv links if needed).",
+      y2026: {
+        p1: {
+          title:
+            "MorphingDB: A Task-Centric AI-Native DBMS for Model Management and Inference",
+          body:
+            "Sai Wu, Ruichen Xia, Dingyu Yang (*), Rui Wang, Huihang Lai, Jiarui Guan, Jiameng Bai, Dongxiang Zhang, Xiu Tang, Zhongle Xie, Peng Lu, Gang Chen. SIGMOD 2026. [CCF A]",
+        },
+        p2: {
+          title: "Query-Aware Path Inference from Spatial Videos",
+          body:
+            "Taihang Dong, Dingyu Yang, Ping Chen, Dongxiang Zhang. SIGMOD 2026. [CCF A]",
+        },
+        p3: {
+          title:
+            "GFS: A Preemption-aware Scheduling Framework for GPU Clusters with Predictive Spot Instance Management",
+          body:
+            "Jiaang Duan, Shenglin Xu, Shiyou Qian, Dingyu Yang (*), Kangjin Wang, Liping Zhang, Gang Chen. ASPLOS 2026. [CCF A]",
+        },
+        p4: {
+          title: "Efficient and Accurate Cross-Camera Vehicle Trajectory Recovery",
+          body:
+            "Taihang Dong, Dingyu Yang (*), Dongping Zhang, Sai Wu, Shaojie Qiao, Dongxiang Zhang. IEEE TKDE. 2026. Accepted. [CCF A]",
+        },
+      },
     },
     contact: {
       title: "Contact",
-      lead: "Replace these placeholders with your real accounts.",
+      lead: "Feel free to reach out for academic discussions, collaborations, or joining the team.",
       channels: "Channels",
-      cvTitle: "CV / Portfolio",
-      cvBody: "You can add a PDF to the repo (e.g., public/resume.pdf) and link it here (edit me).",
-      cvDownload: "Download CV (placeholder)",
-      backProjects: "Back to projects",
-      tip: "Tip: GitHub Pages is great for hosting a static academic homepage and portfolio.",
+      joinTitle: "Recruiting",
+      joinBody:
+        "We are recruiting in multimodal database optimization, multi-agent coordination & scheduling, and LLM inference optimization. Contact: yangdingyu@zju.edu.cn. Welcome to join our Database & Data Intelligence team.",
+      joinCta: "Email me",
+      joinMore: "Research interests",
     },
     footer: {
-      text: "Your Name · Built with GitHub Pages",
+      text: "Dingyu Yang · Built with GitHub Pages",
     },
   },
 };
