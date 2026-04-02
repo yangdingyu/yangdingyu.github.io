@@ -272,6 +272,9 @@ html[data-theme="light"] .top {
 
 .hero-card {
   padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .avatar-wrap {
@@ -316,7 +319,7 @@ html[data-theme="light"] .top {
 }
 
 .hero-card-body {
-  padding-top: 12px;
+  padding-top: 0;
 }
 
 .hero-card-title {

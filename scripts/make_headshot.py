@@ -7,16 +7,6 @@ from pathlib import Path
 from PIL import Image, ImageEnhance, ImageFilter, ImageOps
 
 
-def _center_square(img: Image.Image) -> Image.Image:
-    w, h = img.size
-    side = min(w, h)
-    left = (w - side) // 2
-    # Bias slightly upward for typical portraits (more headroom).
-    top = (h - side) // 2 - int(side * 0.06)
-    top = max(0, min(top, h - side))
-    return img.crop((left, top, left + side, top + side))
-
-
 def _enhance(img: Image.Image) -> Image.Image:
     # Subtle, portrait-friendly tweaks.
     img = ImageOps.exif_transpose(img)
@@ -28,22 +18,47 @@ def _enhance(img: Image.Image) -> Image.Image:
     return img
 
 
+def _compose_square(img: Image.Image, out_size: int, margin: float = 0.06) -> Image.Image:
+    """
+    Create a square headshot without cropping the face:
+    - background: blurred cover
+    - foreground: contain with a small margin
+    """
+    # Background (cover) + blur
+    bg = ImageOps.fit(img, (out_size, out_size), method=Image.Resampling.LANCZOS)
+    bg = bg.filter(ImageFilter.GaussianBlur(radius=max(10, out_size // 48)))
+    bg = ImageEnhance.Brightness(bg).enhance(0.97)
+    bg = ImageEnhance.Contrast(bg).enhance(1.05)
+
+    # Foreground (contain) with margins
+    w, h = img.size
+    inner = int(out_size * (1 - 2 * margin))
+    scale = inner / max(w, h)
+    fg_w = max(1, int(round(w * scale)))
+    fg_h = max(1, int(round(h * scale)))
+    fg = img.resize((fg_w, fg_h), Image.Resampling.LANCZOS)
+
+    x = (out_size - fg_w) // 2
+    y = (out_size - fg_h) // 2
+    bg.paste(fg, (x, y))
+    return bg
+
+
 def build(input_path: Path, out_dir: Path) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
 
     img = Image.open(input_path)
     img = _enhance(img)
-    img = _center_square(img)
 
     sizes = [512, 256]
     for size in sizes:
-        resized = img.resize((size, size), Image.Resampling.LANCZOS)
+        composed = _compose_square(img, size, margin=0.065)
         webp = out_dir / ("headshot.webp" if size == 512 else f"headshot-{size}.webp")
-        resized.save(webp, "WEBP", quality=86, method=6)
+        composed.save(webp, "WEBP", quality=86, method=6)
 
     # PNG fallback for older environments / debugging.
     png = out_dir / "headshot.png"
-    img.resize((512, 512), Image.Resampling.LANCZOS).save(png, "PNG", optimize=True)
+    _compose_square(img, 512, margin=0.065).save(png, "PNG", optimize=True)
 
 
 def main() -> int:
