@@ -25,20 +25,6 @@ cd public && python3 -m http.server 5173
 bash scripts/serve.sh 5173
 ```
 
-## 2.1) 添加个人照片（可选）
-
-1. 把你的原始照片保存为：`public/assets/headshot-source.jpg`（或 png）
-2. 生成网页使用的优化图片：
-
-```bash
-python3 scripts/make_headshot.py
-```
-
-会生成：
-
-- `public/assets/headshot.webp`
-- `public/assets/headshot-256.webp`
-- `public/assets/headshot.png`（备用）
 
 ## 3) 部署到 GitHub Pages（推荐 Actions）
 

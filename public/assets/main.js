@@ -31,12 +31,14 @@ const I18N = {
       viewProjects: "看项目",
       viewPublications: "看论文",
       email: "邮箱联系",
-      photoAlt: "杨定裕照片",
       affiliation: "单位：浙江大学区块链与数据安全全国重点实验室",
       focus: "研究方向：大数据处理 · 大模型向量检索 · 软硬结合优化 · 资源调度",
-      nowTitle: "现在在做",
       nowText:
         "多模态数据库优化、多智能体协同与资源调度优化、大模型推理优化。",
+      cardTitle: "学术概览",
+      h1: "发表论文 60+（CCF 推荐会议与期刊）",
+      h2: "阿里巴巴集团 6 年（性能优化与资源调度）",
+      h3: "主持 NSFC 青年、CCF-华为/蚂蚁基金等项目",
     },
     bio: {
       title: "个人简介",
@@ -160,14 +162,16 @@ const I18N = {
       viewProjects: "Projects",
       viewPublications: "Publications",
       email: "Email",
-      photoAlt: "Photo of Dingyu Yang",
       affiliation:
         "Affiliation: State Key Laboratory of Blockchain and Data Security, Zhejiang University",
       focus:
         "Interests: big data processing · vector retrieval for LLMs · SW/HW co-optimization · resource scheduling",
-      nowTitle: "Now",
       nowText:
         "Multimodal database optimization, multi-agent coordination & scheduling, and LLM inference optimization.",
+      cardTitle: "Academic Snapshot",
+      h1: "60+ publications in CCF-recommended venues/journals",
+      h2: "6 years at Alibaba (performance & datacenter scheduling)",
+      h3: "Led NSFC Young Scientists Fund and CCF–Huawei/Ant projects",
     },
     bio: {
       title: "Bio",
@@ -299,13 +303,6 @@ function applyLang(lang) {
     const key = el.dataset.i18n;
     const value = get(dict, key);
     if (typeof value === "string") el.textContent = value;
-  });
-
-  // alt text
-  document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
-    const key = el.dataset.i18nAlt;
-    const value = get(dict, key);
-    if (typeof value === "string") el.setAttribute("alt", value);
   });
 
   // lang toggle badge
