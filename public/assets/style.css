@@ -274,14 +274,45 @@ html[data-theme="light"] .top {
   padding: 16px;
 }
 
-.avatar {
-  height: 132px;
+.avatar-wrap {
+  height: 148px;
+  border-radius: 18px;
+  padding: 2px;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--brand) 60%, transparent),
+    color-mix(in srgb, var(--brand-2) 55%, transparent)
+  );
+}
+
+.avatar-img,
+.avatar-fallback {
+  width: 100%;
+  height: 100%;
+  display: block;
   border-radius: 16px;
   border: 1px solid var(--border);
+  background: var(--panel);
+}
+
+.avatar-img {
+  object-fit: cover;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+}
+
+.avatar-fallback {
   background:
-    radial-gradient(180px 120px at 30% 30%, rgba(124, 58, 237, 0.3), transparent),
-    radial-gradient(220px 160px at 70% 70%, rgba(34, 197, 94, 0.22), transparent),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+    radial-gradient(
+      240px 180px at 30% 30%,
+      color-mix(in srgb, var(--brand) 22%, transparent),
+      transparent
+    ),
+    radial-gradient(
+      260px 200px at 70% 70%,
+      color-mix(in srgb, var(--brand-2) 18%, transparent),
+      transparent
+    ),
+    linear-gradient(135deg, var(--panel-strong), var(--panel));
 }
 
 .hero-card-body {

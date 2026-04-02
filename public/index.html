@@ -84,7 +84,22 @@
           </div>
 
           <aside class="card hero-card" aria-label="快速信息">
-            <div class="avatar" role="img" aria-label="头像占位"></div>
+            <div class="avatar-wrap">
+              <img
+                class="avatar-img"
+                src="./assets/headshot.webp"
+                srcset="./assets/headshot-256.webp 256w, ./assets/headshot.webp 512w"
+                sizes="148px"
+                width="512"
+                height="512"
+                loading="lazy"
+                decoding="async"
+                data-i18n-alt="hero.photoAlt"
+                alt=""
+                onerror="this.hidden=true;this.nextElementSibling.hidden=false"
+              />
+              <div class="avatar-fallback" aria-hidden="true" hidden></div>
+            </div>
             <div class="hero-card-body">
               <p class="hero-card-title" data-i18n="hero.nowTitle">现在在做</p>
               <p class="hero-card-text" data-i18n="hero.nowText"></p>

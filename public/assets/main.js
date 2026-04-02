@@ -31,6 +31,7 @@ const I18N = {
       viewProjects: "看项目",
       viewPublications: "看论文",
       email: "邮箱联系",
+      photoAlt: "杨定裕照片",
       affiliation: "单位：浙江大学区块链与数据安全全国重点实验室",
       focus: "研究方向：大数据处理 · 大模型向量检索 · 软硬结合优化 · 资源调度",
       nowTitle: "现在在做",
@@ -159,6 +160,7 @@ const I18N = {
       viewProjects: "Projects",
       viewPublications: "Publications",
       email: "Email",
+      photoAlt: "Photo of Dingyu Yang",
       affiliation:
         "Affiliation: State Key Laboratory of Blockchain and Data Security, Zhejiang University",
       focus:
@@ -297,6 +299,13 @@ function applyLang(lang) {
     const key = el.dataset.i18n;
     const value = get(dict, key);
     if (typeof value === "string") el.textContent = value;
+  });
+
+  // alt text
+  document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
+    const key = el.dataset.i18nAlt;
+    const value = get(dict, key);
+    if (typeof value === "string") el.setAttribute("alt", value);
   });
 
   // lang toggle badge
