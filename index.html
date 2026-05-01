@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="zh-CN" data-lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+
+    <title data-i18n="meta.title">你的名字 · 个人主页</title>
+    <meta name="description" data-i18n-content="meta.description" content="" />
+
+    <meta property="og:title" data-i18n-content="meta.ogTitle" content="" />
+    <meta
+      property="og:description"
+      data-i18n-content="meta.ogDescription"
+      content=""
+    />
+    <meta property="og:type" content="website" />
+
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <script defer src="./assets/main.js"></script>
+  </head>
+
+  <body>
+    <a class="skip" href="#content" data-i18n="a11y.skip">跳到主要内容</a>
+
+    <header class="top">
+      <div class="container top-inner">
+        <a class="brand" href="./" data-i18n="hero.siteTitle">杨定裕个人主页</a>
+
+        <nav class="nav" aria-label="主导航">
+          <a href="#bio" data-i18n="nav.bio">简介</a>
+          <a href="#publications" data-i18n="nav.publications">发表论文</a>
+          <a href="#projects" data-i18n="nav.projects">主持项目</a>
+          <a href="#contact" data-i18n="nav.contact">联系</a>
+
+          <button class="icon-btn" type="button" data-lang-toggle>
+            <span class="lang" aria-hidden="true">EN</span>
+            <span class="sr-only" data-i18n="a11y.toggleLang">切换语言</span>
+          </button>
+          <button class="icon-btn" type="button" data-theme-toggle>
+            <span class="icon" aria-hidden="true">☾</span>
+            <span class="sr-only" data-i18n="a11y.toggleTheme">切换主题</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content" class="container">
+      <section class="hero">
+        <div class="hero-grid">
+          <div>
+            <p class="kicker" data-i18n="hero.kicker">你好，我是</p>
+            <h1 class="title" data-i18n="name">杨定裕</h1>
+            <p class="subtitle" data-i18n="hero.subtitle"></p>
+
+            <div class="cta">
+              <a class="btn primary" href="#publications" data-i18n="hero.viewPublications"
+                >看论文</a
+              >
+              <a class="btn" href="#projects" data-i18n="hero.viewProjects">看项目</a>
+              <a
+                class="btn ghost"
+                href="mailto:yangdingyu@zju.edu.cn"
+                data-i18n="hero.email"
+                >邮箱联系</a
+              >
+            </div>
+
+            <ul class="meta">
+              <li>
+                <span class="dot" aria-hidden="true"></span>
+                <span class="meta-strong" data-i18n="hero.focus"></span>
+              </li>
+            </ul>
+          </div>
+
+          <aside class="card hero-card" aria-label="快速信息">
+            <div class="hero-card-body">
+              <p class="hero-card-title" data-i18n="hero.cardTitle">Academic Profile</p>
+              <ul class="highlights" aria-label="Highlights">
+                <li class="highlight" data-i18n="hero.h1"></li>
+                <li class="highlight" data-i18n="hero.h2"></li>
+                <li class="highlight" data-i18n="hero.h3"></li>
+              </ul>
+              <p class="hero-card-text" data-i18n="hero.nowText"></p>
+              <div class="chips" aria-label="技能标签">
+                <span class="chip">Database</span>
+                <span class="chip">Systems</span>
+                <span class="chip">LLM</span>
+                <span class="chip">Scheduling</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="bio" class="section">
+        <div class="section-head">
+          <h2 data-i18n="bio.title">个人简介</h2>
+          <p data-i18n="bio.lead"></p>
+        </div>
+
+        <article class="card">
+          <p data-i18n="bio.p1"></p>
+          <p data-i18n="bio.p2"></p>
+          <p data-i18n="bio.p3"></p>
+        </article>
+      </section>
+
+      <section id="publications" class="section">
+        <div class="section-head">
+          <h2 data-i18n="pubs.title">发表论文</h2>
+          <p data-i18n="pubs.lead"></p>
+        </div>
+        <div data-publications></div>
+        <div class="scholar-links" aria-label="Academic Links">
+          <a
+            class="scholar-link"
+            href="https://scholar.google.com/citations?user=vzkukR0AAAAJ"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Google Scholar"
+            title="Google Scholar"
+          >
+            <img
+              class="profile-logo"
+              src="./assets/google-scholar.svg"
+              alt="Google Scholar"
+              width="22"
+              height="22"
+            />
+            <span>Google Scholar</span>
+          </a>
+          <a
+            class="scholar-link"
+            href="https://dblp.org/pid/119/6899.html"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="DBLP"
+            title="DBLP"
+          >
+            <img
+              class="profile-logo"
+              src="./assets/dblp.svg"
+              alt="DBLP"
+              width="22"
+              height="22"
+            />
+            <span>DBLP</span>
+          </a>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="section-head">
+          <h2 data-i18n="projects.title">主持项目</h2>
+          <p data-i18n="projects.lead"></p>
+        </div>
+
+        <ol class="project-entries">
+          <li class="project-entry">
+            <div class="project-entry-head">
+              <span class="project-index">01</span>
+              <h3 class="project-entry-title" data-i18n="projects.p1.title"></h3>
+            </div>
+            <p class="project-entry-meta" data-i18n="projects.p1.meta"></p>
+          </li>
+          <li class="project-entry">
+            <div class="project-entry-head">
+              <span class="project-index">02</span>
+              <h3 class="project-entry-title" data-i18n="projects.p2.title"></h3>
+            </div>
+            <p class="project-entry-meta" data-i18n="projects.p2.meta"></p>
+          </li>
+          <li class="project-entry">
+            <div class="project-entry-head">
+              <span class="project-index">03</span>
+              <h3 class="project-entry-title" data-i18n="projects.p3.title"></h3>
+            </div>
+            <p class="project-entry-meta" data-i18n="projects.p3.meta"></p>
+          </li>
+          <li class="project-entry">
+            <div class="project-entry-head">
+              <span class="project-index">04</span>
+              <h3 class="project-entry-title" data-i18n="projects.p4.title"></h3>
+            </div>
+            <p class="project-entry-meta" data-i18n="projects.p4.meta"></p>
+          </li>
+          <li class="project-entry">
+            <div class="project-entry-head">
+              <span class="project-index">05</span>
+              <h3 class="project-entry-title" data-i18n="projects.p5.title"></h3>
+            </div>
+            <p class="project-entry-meta" data-i18n="projects.p5.meta"></p>
+          </li>
+          <li class="project-entry">
+            <div class="project-entry-head">
+              <span class="project-index">06</span>
+              <h3 class="project-entry-title" data-i18n="projects.p6.title"></h3>
+            </div>
+            <p class="project-entry-meta" data-i18n="projects.p6.meta"></p>
+          </li>
+        </ol>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="section-head">
+          <h2 data-i18n="contact.title">联系我</h2>
+          <p data-i18n="contact.lead"></p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3 data-i18n="contact.channels">常用渠道</h3>
+            <ul class="contact">
+              <li>
+                <span class="muted">Email</span>
+                <a href="mailto:yangdingyu@zju.edu.cn">yangdingyu@zju.edu.cn</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3 data-i18n="contact.joinTitle">团队招收</h3>
+            <p data-i18n="contact.joinBody"></p>
+            <div class="cta">
+              <a class="btn primary" href="mailto:yangdingyu@zju.edu.cn" data-i18n="contact.joinCta"
+                >邮件联系</a
+              >
+              <a class="btn ghost" href="#projects" data-i18n="contact.joinMore">看项目</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>
+          © <span data-year></span> <span data-i18n="footer.text"></span>
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
