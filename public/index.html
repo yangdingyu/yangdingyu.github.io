@@ -26,16 +26,12 @@
 
     <header class="top">
       <div class="container top-inner">
-        <a class="brand" href="./" aria-label="返回首页">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <span class="brand-text" data-i18n="name">杨定裕</span>
-        </a>
+        <a class="brand" href="./" data-i18n="hero.siteTitle">杨定裕个人主页</a>
 
         <nav class="nav" aria-label="主导航">
           <a href="#bio" data-i18n="nav.bio">简介</a>
-          <a href="#research" data-i18n="nav.research">研究方向</a>
-          <a href="#projects" data-i18n="nav.projects">主持项目</a>
           <a href="#publications" data-i18n="nav.publications">发表论文</a>
+          <a href="#projects" data-i18n="nav.projects">主持项目</a>
           <a href="#contact" data-i18n="nav.contact">联系</a>
 
           <button class="icon-btn" type="button" data-lang-toggle>
@@ -74,11 +70,7 @@
             <ul class="meta">
               <li>
                 <span class="dot" aria-hidden="true"></span>
-                <span data-i18n="hero.affiliation"></span>
-              </li>
-              <li>
-                <span class="dot" aria-hidden="true"></span>
-                <span data-i18n="hero.focus"></span>
+                <span class="meta-strong" data-i18n="hero.focus"></span>
               </li>
             </ul>
           </div>
@@ -116,25 +108,47 @@
         </article>
       </section>
 
-      <section id="research" class="section">
+      <section id="publications" class="section">
         <div class="section-head">
-          <h2 data-i18n="research.title">研究方向</h2>
-          <p data-i18n="research.lead"></p>
+          <h2 data-i18n="pubs.title">发表论文</h2>
+          <p data-i18n="pubs.lead"></p>
         </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <h3 data-i18n="research.r1.title">方向一</h3>
-            <p class="muted" data-i18n="research.r1.body"></p>
-          </article>
-          <article class="card">
-            <h3 data-i18n="research.r2.title">方向二</h3>
-            <p class="muted" data-i18n="research.r2.body"></p>
-          </article>
-          <article class="card">
-            <h3 data-i18n="research.r3.title">方向三</h3>
-            <p class="muted" data-i18n="research.r3.body"></p>
-          </article>
+        <div data-publications></div>
+        <div class="scholar-links" aria-label="Academic Links">
+          <a
+            class="scholar-link"
+            href="https://scholar.google.com/citations?user=vzkukR0AAAAJ"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Google Scholar"
+            title="Google Scholar"
+          >
+            <img
+              class="profile-logo"
+              src="./assets/google-scholar.svg"
+              alt="Google Scholar"
+              width="22"
+              height="22"
+            />
+            <span>Google Scholar</span>
+          </a>
+          <a
+            class="scholar-link"
+            href="https://dblp.org/pid/119/6899.html"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="DBLP"
+            title="DBLP"
+          >
+            <img
+              class="profile-logo"
+              src="./assets/dblp.svg"
+              alt="DBLP"
+              width="22"
+              height="22"
+            />
+            <span>DBLP</span>
+          </a>
         </div>
       </section>
 
@@ -144,76 +158,48 @@
           <p data-i18n="projects.lead"></p>
         </div>
 
-        <div class="project-list">
-          <article class="card project">
-            <div class="project-top">
-              <h3 data-i18n="projects.p1.title">国家自然科学青年基金</h3>
-              <span class="pill" data-i18n="projects.p1.tag">基金</span>
+        <ol class="project-entries">
+          <li class="project-entry">
+            <div class="project-entry-head">
+              <span class="project-index">01</span>
+              <h3 class="project-entry-title" data-i18n="projects.p1.title"></h3>
             </div>
-            <p data-i18n="projects.p1.body"></p>
-          </article>
-
-          <article class="card project">
-            <div class="project-top">
-              <h3 data-i18n="projects.p2.title">CCF-华为胡杨林基金数据库专项</h3>
-              <span class="pill" data-i18n="projects.p2.tag">基金</span>
-            </div>
-            <p data-i18n="projects.p2.body"></p>
-          </article>
-
-          <article class="card project">
-            <div class="project-top">
-              <h3 data-i18n="projects.p3.title">CCF-蚂蚁软硬协同基金</h3>
-              <span class="pill" data-i18n="projects.p3.tag">基金</span>
-            </div>
-            <p data-i18n="projects.p3.body"></p>
-          </article>
-
-          <article class="card project">
-            <div class="project-top">
-              <h3 data-i18n="projects.p4.title">阿里巴巴 AIR 项目</h3>
-              <span class="pill" data-i18n="projects.p4.tag">Industry</span>
-            </div>
-            <p data-i18n="projects.p4.body"></p>
-          </article>
-        </div>
-      </section>
-
-      <section id="publications" class="section">
-        <div class="section-head">
-          <h2 data-i18n="pubs.title">发表论文</h2>
-          <p data-i18n="pubs.lead"></p>
-        </div>
-
-        <div class="pub-year" aria-label="Year">2026</div>
-        <ol class="pubs">
-          <li class="card pub-item">
-            <div class="pub-head">
-              <span class="pub-idx">[1]</span>
-              <h3 class="pub-title" data-i18n="pubs.y2026.p1.title"></h3>
-            </div>
-            <p class="muted" data-i18n="pubs.y2026.p1.body"></p>
+            <p class="project-entry-meta" data-i18n="projects.p1.meta"></p>
           </li>
-          <li class="card pub-item">
-            <div class="pub-head">
-              <span class="pub-idx">[2]</span>
-              <h3 class="pub-title" data-i18n="pubs.y2026.p2.title"></h3>
+          <li class="project-entry">
+            <div class="project-entry-head">
+              <span class="project-index">02</span>
+              <h3 class="project-entry-title" data-i18n="projects.p2.title"></h3>
             </div>
-            <p class="muted" data-i18n="pubs.y2026.p2.body"></p>
+            <p class="project-entry-meta" data-i18n="projects.p2.meta"></p>
           </li>
-          <li class="card pub-item">
-            <div class="pub-head">
-              <span class="pub-idx">[3]</span>
-              <h3 class="pub-title" data-i18n="pubs.y2026.p3.title"></h3>
+          <li class="project-entry">
+            <div class="project-entry-head">
+              <span class="project-index">03</span>
+              <h3 class="project-entry-title" data-i18n="projects.p3.title"></h3>
             </div>
-            <p class="muted" data-i18n="pubs.y2026.p3.body"></p>
+            <p class="project-entry-meta" data-i18n="projects.p3.meta"></p>
           </li>
-          <li class="card pub-item">
-            <div class="pub-head">
-              <span class="pub-idx">[4]</span>
-              <h3 class="pub-title" data-i18n="pubs.y2026.p4.title"></h3>
+          <li class="project-entry">
+            <div class="project-entry-head">
+              <span class="project-index">04</span>
+              <h3 class="project-entry-title" data-i18n="projects.p4.title"></h3>
             </div>
-            <p class="muted" data-i18n="pubs.y2026.p4.body"></p>
+            <p class="project-entry-meta" data-i18n="projects.p4.meta"></p>
+          </li>
+          <li class="project-entry">
+            <div class="project-entry-head">
+              <span class="project-index">05</span>
+              <h3 class="project-entry-title" data-i18n="projects.p5.title"></h3>
+            </div>
+            <p class="project-entry-meta" data-i18n="projects.p5.meta"></p>
+          </li>
+          <li class="project-entry">
+            <div class="project-entry-head">
+              <span class="project-index">06</span>
+              <h3 class="project-entry-title" data-i18n="projects.p6.title"></h3>
+            </div>
+            <p class="project-entry-meta" data-i18n="projects.p6.meta"></p>
           </li>
         </ol>
       </section>
@@ -242,7 +228,7 @@
               <a class="btn primary" href="mailto:yangdingyu@zju.edu.cn" data-i18n="contact.joinCta"
                 >邮件联系</a
               >
-              <a class="btn ghost" href="#research" data-i18n="contact.joinMore">看研究方向</a>
+              <a class="btn ghost" href="#projects" data-i18n="contact.joinMore">看项目</a>
             </div>
           </div>
         </div>
