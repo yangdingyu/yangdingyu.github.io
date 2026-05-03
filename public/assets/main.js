@@ -1,5 +1,6 @@
 const THEME_KEY = "theme";
 const LANG_KEY = "lang";
+const GA_STORAGE_KEY = "ga-disabled";
 
 const I18N = {
   zh: {
@@ -19,6 +20,7 @@ const I18N = {
     },
     nav: {
       bio: "个人简介",
+      service: "学术服务",
       projects: "主持项目",
       publications: "发表论文",
       contact: "联系",
@@ -30,6 +32,7 @@ const I18N = {
         "浙江大学区块链与数据安全全国重点实验室 研究员 · CCF 数据库&协同计算专委 执行委员",
       viewProjects: "看项目",
       viewPublications: "看论文",
+      viewStats: "看统计",
       email: "邮箱联系",
       focus: "研究方向：AI+DB、大模型推理优化、软硬协同与资源调度",
       nowText:
@@ -87,6 +90,38 @@ const I18N = {
       title: "发表论文",
       lead: "按年份展示论文列表。",
     },
+    stats: {
+      title: "访问统计",
+      lead: "公开显示累计访客与页面浏览量，地区分布通过 GA4 后台查看。",
+      visitors: "累计访客",
+      views: "页面浏览",
+      regions: "地区分布",
+      regionNote: "国家 / 地区 / 城市分布可在 Google Analytics 4 报表中查看。",
+      loading: "统计加载中",
+    },
+    statsPage: {
+      metaTitle: "访问统计 · 杨定裕个人主页",
+      metaDescription: "查看主页访问人数、页面浏览量，以及地区分布说明。",
+      title: "访问统计",
+      lead: "本页公开显示主页累计访客与页面浏览量。",
+      backendTitle: "地区分布与后台分析",
+      backendBody:
+        "国家、地区与城市分布建议在 Google Analytics 4 后台查看，可在 Reports → Demographics → Demographic details 中获取更完整的访问分析。",
+    },
+    service: {
+      title: "学术服务",
+      lead: "学术组织服务与国际期刊 / 会议审稿工作。",
+      committeeTitle: "学术任职",
+      committee1: "CCF 数据库专委 执行委员",
+      committee2: "CCF 协同计算专委 执行委员",
+      reviewTitle: "审稿服务",
+      review1: "Reviewer of ACM KDD",
+      review2: "Reviewer of ACM Multimedia",
+      review3: "Reviewer of IEEE Transactions on Knowledge and Data Engineering",
+      review4: "Reviewer of IEEE Transactions on Cloud Computing",
+      review5: "Reviewer of Information Fusion",
+      review6: "Reviewer of The Journal of Supercomputing",
+    },
     contact: {
       title: "联系我",
       lead: "欢迎学术交流、项目合作与学生加入。",
@@ -118,6 +153,7 @@ const I18N = {
     },
     nav: {
       bio: "Bio",
+      service: "Service",
       projects: "Projects",
       publications: "Publications",
       contact: "Contact",
@@ -129,6 +165,7 @@ const I18N = {
         "Researcher, State Key Laboratory of Blockchain and Data Security, Zhejiang University · Executive Committee Member, CCF TC on Databases & Cooperative Computing",
       viewProjects: "Projects",
       viewPublications: "Publications",
+      viewStats: "Statistics",
       email: "Email",
       focus:
         "Research Interests: AI+DB, LLM inference optimization, SW/HW co-optimization and resource scheduling",
@@ -186,6 +223,38 @@ const I18N = {
     pubs: {
       title: "Publications",
       lead: "Publication list grouped by year.",
+    },
+    stats: {
+      title: "Site Statistics",
+      lead: "Public counters show total visitors and page views, while geographic distribution is tracked in GA4.",
+      visitors: "Visitors",
+      views: "Page Views",
+      regions: "Regions",
+      regionNote: "Country, region, and city distributions are available in Google Analytics 4 reports.",
+      loading: "Loading",
+    },
+    statsPage: {
+      metaTitle: "Statistics · Dingyu Yang Homepage",
+      metaDescription: "View public visitor counts, page views, and guidance for geographic analytics.",
+      title: "Site Statistics",
+      lead: "This page publicly shows total visitors and page views for the homepage.",
+      backendTitle: "Geographic Analytics",
+      backendBody:
+        "Country, region, and city distributions are best reviewed in Google Analytics 4 under Reports → Demographics → Demographic details.",
+    },
+    service: {
+      title: "Academic Service",
+      lead: "Professional service roles and reviewing activities.",
+      committeeTitle: "Committee Roles",
+      committee1: "Executive Committee Member, CCF Technical Committee on Databases",
+      committee2: "Executive Committee Member, CCF Technical Committee on Cooperative Computing",
+      reviewTitle: "Reviewing Service",
+      review1: "Reviewer of ACM KDD",
+      review2: "Reviewer of ACM Multimedia",
+      review3: "Reviewer of IEEE Transactions on Knowledge and Data Engineering",
+      review4: "Reviewer of IEEE Transactions on Cloud Computing",
+      review5: "Reviewer of Information Fusion",
+      review6: "Reviewer of The Journal of Supercomputing",
     },
     contact: {
       title: "Contact",
@@ -465,6 +534,40 @@ function get(obj, path) {
   return path.split(".").reduce((acc, key) => (acc ? acc[key] : undefined), obj);
 }
 
+function initAnalytics() {
+  const measurementId = window.SITE_CONFIG?.ga4MeasurementId?.trim();
+  if (!measurementId || localStorage.getItem(GA_STORAGE_KEY) === "true") return;
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function gtag() {
+    window.dataLayer.push(arguments);
+  };
+
+  window.gtag("js", new Date());
+  window.gtag("config", measurementId, {
+    anonymize_ip: true,
+  });
+
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(measurementId)}`;
+  document.head.appendChild(script);
+}
+
+function initPublicCounter() {
+  if (!window.SITE_CONFIG?.enablePublicCounter) return;
+
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = "//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js";
+  script.onload = () => {
+    document.querySelectorAll(".stat-fallback").forEach((el) => {
+      el.hidden = true;
+    });
+  };
+  document.head.appendChild(script);
+}
+
 function escapeHtml(text) {
   return text
     .replaceAll("&", "&amp;")
@@ -510,9 +613,7 @@ function renderPublications(lang) {
 }
 
 function detectLang() {
-  const navLang =
-    (navigator.languages && navigator.languages[0]) || navigator.language || "";
-  return navLang.toLowerCase().startsWith("zh") ? "zh" : "en";
+  return "zh";
 }
 
 function applyLang(lang) {
@@ -561,9 +662,7 @@ function initLang() {
 }
 
 function getSystemTheme() {
-  return window.matchMedia?.("(prefers-color-scheme: light)").matches
-    ? "light"
-    : "dark";
+  return "light";
 }
 
 function applyTheme(theme) {
@@ -653,3 +752,5 @@ initLang();
 initTheme();
 initYear();
 initNavSpy();
+initAnalytics();
+initPublicCounter();

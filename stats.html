@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN" data-lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+
+    <title data-i18n="statsPage.metaTitle">访问统计 · 杨定裕个人主页</title>
+    <meta name="description" data-i18n-content="statsPage.metaDescription" content="" />
+    <meta property="og:title" data-i18n-content="statsPage.metaTitle" content="" />
+    <meta property="og:description" data-i18n-content="statsPage.metaDescription" content="" />
+    <meta property="og:type" content="website" />
+
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <script src="./assets/site-config.js"></script>
+    <script defer src="./assets/main.js"></script>
+  </head>
+
+  <body>
+    <a class="skip" href="#content" data-i18n="a11y.skip">跳到主要内容</a>
+
+    <header class="top">
+      <div class="container top-inner">
+        <a class="brand" href="./index.html" data-i18n="hero.siteTitle">杨定裕个人主页</a>
+
+        <nav class="nav" aria-label="主导航">
+          <a href="./index.html#bio" data-i18n="nav.bio">简介</a>
+          <a href="./index.html#publications" data-i18n="nav.publications">发表论文</a>
+          <a href="./index.html#projects" data-i18n="nav.projects">主持项目</a>
+          <a href="./index.html#service" data-i18n="nav.service">学术服务</a>
+          <a href="./index.html#contact" data-i18n="nav.contact">联系</a>
+
+          <button class="icon-btn" type="button" data-lang-toggle>
+            <span class="lang" aria-hidden="true">EN</span>
+            <span class="sr-only" data-i18n="a11y.toggleLang">切换语言</span>
+          </button>
+          <button class="icon-btn" type="button" data-theme-toggle>
+            <span class="icon" aria-hidden="true">☾</span>
+            <span class="sr-only" data-i18n="a11y.toggleTheme">切换主题</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content" class="container">
+      <section class="section">
+        <div class="section-head">
+          <h1 data-i18n="statsPage.title">访问统计</h1>
+          <p data-i18n="statsPage.lead"></p>
+        </div>
+
+        <div class="stats-grid">
+          <article class="card stat-card">
+            <p class="stat-label" data-i18n="stats.visitors">累计访客</p>
+            <p class="stat-value">
+              <span id="busuanzi_container_site_uv" hidden>
+                <span id="busuanzi_value_site_uv">-</span>
+              </span>
+              <span class="stat-fallback" data-i18n="stats.loading">统计加载中</span>
+            </p>
+          </article>
+
+          <article class="card stat-card">
+            <p class="stat-label" data-i18n="stats.views">页面浏览</p>
+            <p class="stat-value">
+              <span id="busuanzi_container_site_pv" hidden>
+                <span id="busuanzi_value_site_pv">-</span>
+              </span>
+              <span class="stat-fallback" data-i18n="stats.loading">统计加载中</span>
+            </p>
+          </article>
+
+          <article class="card stat-card stat-card-note">
+            <p class="stat-label" data-i18n="stats.regions">地区分布</p>
+            <p class="stat-note" data-i18n="stats.regionNote"></p>
+          </article>
+        </div>
+
+        <div class="card stats-help-card">
+          <h2 class="service-card-title" data-i18n="statsPage.backendTitle">后台统计查看</h2>
+          <p class="stat-note" data-i18n="statsPage.backendBody"></p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
