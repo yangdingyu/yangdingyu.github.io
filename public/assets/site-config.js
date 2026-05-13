@@ -1,4 +1,4 @@
 window.SITE_CONFIG = {
-  ga4MeasurementId: "",
+  ga4MeasurementId: "G-EJCKGLZKTE",
   enablePublicCounter: true,
 };
